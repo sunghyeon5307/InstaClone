@@ -1,6 +1,13 @@
 // src/pages/Login.jsx
+import { useNavigate } from 'react-router-dom';
 
 function Login() {
+    const navigate = useNavigate(); // 추가
+
+    const handleLogin = () => {
+    // 여기에 로그인 로직이 들어갈 수도 있음
+      navigate('/home'); // 이동
+    };
     return (
       <>
         <div
@@ -34,7 +41,7 @@ function Login() {
               style={inputStyle}
             />
             <input type="password" placeholder="비밀번호" style={inputStyle} />
-            <button style={buttonStyle}>로그인</button>
+            <button style={buttonStyle} onClick={handleLogin}>로그인</button>
   
             <div style={dividerWrapper}>
               <hr style={lineStyle} />
