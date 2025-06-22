@@ -1,13 +1,17 @@
 // src/pages/Home.jsx
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
+
 
 function Home() {
   return (
     <div style={{ display: 'flex', justifyContent: 'center', backgroundColor: '#fff', padding: '30px' }}>
       {/* 왼쪽 사이드바 */}
-      <div style={{ width: '250px', marginRight: '40px' }}>
+      <div style={{ width: '250px', marginRight: '10px' }}>
         <LeftSidebar />
       </div>
+      <div style={{ width: '1px', backgroundColor: '#ddd',marginRight:'30px' }} />
+
 
       {/* 중앙 컬럼 (스토리 + 피드) */}
       <div style={{ flexShrink: 0, width: '470px' }}>
@@ -24,12 +28,14 @@ function Home() {
 }
 
 function LeftSidebar() {
+  const navigate = useNavigate();
+
   return (
     <div style={{ width: '250px', paddingRight: '40px' }}>
       <img src="/insta_logo.png" alt="Instagram" style={{ height: '40px', marginBottom: '30px' }} />
-      <SidebarItem img="/2.png" label="홈" />
+      <SidebarItem img="/2.png" label="홈" onClick={() => navigate('/home')} />
       <SidebarItem img="/3.png" label="검색" />
-      <SidebarItem img="/4.png" label="탐색 탭" />
+      <SidebarItem img="/4.png" label="탐색 탭" onClick={() => navigate('/Explore')} />
       <SidebarItem img="/5.png" label="릴스" />
       <SidebarItem img="/6.png" label="메시지" />
       <SidebarItem img="/7.png" label="알림" />
@@ -42,6 +48,7 @@ function LeftSidebar() {
     </div>
   );
 }
+
 
 function StoryBar() {
     return (
@@ -139,13 +146,23 @@ function RightSidebar() {
   );
 }
 
-function SidebarItem({ img, label }) {
+function SidebarItem({ img, label, onClick }) {
   return (
-    <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '20px', cursor: 'pointer' }}>
+    <div
+      onClick={onClick}
+      style={{
+        display: 'flex',
+        alignItems: 'center',
+        gap: '12px',
+        marginBottom: '20px',
+        cursor: 'pointer',
+      }}
+    >
       <img src={img} alt={label} style={{ height: '37px' }} />
       <span style={{ fontSize: '17px', fontWeight: 'bold' }}>{label}</span>
     </div>
   );
 }
+
 
 export default Home;

@@ -65,9 +65,11 @@ function Login() {
                 }}
               >
                 <img src="/facebook_logo.png" alt="facebook" style={{ height: '25px' }} />
+                <a href='https://www.facebook.com/login.php?next=https%3A%2F%2Fwww.facebook.com%2Foidc%2F%3Fapp_id%3D124024574287414%26redirect_uri%3Dhttps%253A%252F%252Fwww.instagram.com%252Faccounts%252Fsignupviafb%252F%26response_type%3Dcode%26scope%3Dopenid%2Bemail%2Bprofile%2Blinking%26state%3DATluMbBSvEBkMjepL9G-OtCG1w3tL3esQ84NII11tOFo9icXEkK4QwR9cJyEwmtl0qKHRcVgWwD3zOgF5LXta5unwBp6K05FBQPNBqoD2t_YBbkmr_q4s8CybIlV82MzHD5p7efh1Ct3huptOxG4QSq8jHrK2VpwMa-CyZLurSeav4Goz7mUprTuyZX66IsU7qtUYgyddOLdrx416NtS4dxqhg0I03W7RYB_ox-BSrfqZe8B7w'>
                 <div style={{ fontSize: '15px', color: '#1877F2', fontWeight: 'bold' }}>
                   Facebook으로 로그인
                 </div>
+                </a>
               </div>
             </a>
   
@@ -97,15 +99,11 @@ function Login() {
                 }}
               >
                 계정이 없으신가요?{' '}
-                <span
-                  style={{
-                    fontWeight: 'bold',
-                    color: '#5f75eb',
-                    cursor: 'pointer',
-                  }}
-                >
+                <a href='https://www.instagram.com/accounts/emailsignup/'target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none' }}>
+                <span style={{ fontWeight: 'bold', color: '#5f75eb', cursor: 'pointer' }}>
                   가입하기
                 </span>
+                </a>
               </div>
             </a>
           </div>
